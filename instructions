@@ -1,0 +1,69 @@
+nap Interactive Full-Stack Homework Exercise
+
+Create a simple project that meets the requirements listed below. The project should have a
+publicly-accessible URL in the repo provider of your choice - GitHub, Gitlab, and BitBucket
+are recommended (but not required). Please include a top-level README.md that documents what
+the project does, how a developer should install/test/run it, and any comments about design
+choices you made that others should know about.
+
+## Overview
+
+Create a very simple home maintenance planner in Javascript meeting the requirements listed
+below. It should not be necessary to put more than 4-6 hours into the task, and you are
+welcome to submit a partial entry if you run out of time. Focus on showing off what you can
+do rather than small details in the requirements list.
+
+For a full-stack role, we are looking for individuals who can think "broadly" rather than
+"deeply". For instance, if you are short on time, it would be better to submit a fully
+working project that implements just one function (e.g. adding items) than a full-featured
+back-end API without a front-end.
+
+Trade-offs are part of any project, and submissions will not be negatively reviewed
+specifically on missed requirements. But if you make a trade-off, be sure to document it!
+Clear expectations and communication ABOUT those details is very important in this role.
+
+If you would like some insight into how at least one reviewer "thinks," take a look at
+https://github.com/crrobinson14/sits. Note that this project is not suitable as a template
+for this exercise.
+
+## Requirements
+
+- A front-end framework of your choice (Angular, React, or Vue are preferred).
+- A back-end framework of your choice.
+- An ORM of your choice (although Sequelize is preferred).
+- A brief description justifying why you chose each framework (~1 paragraph).
+- A simple CRUD API that includes `Add Planner Item: { title, date }`,
+  `Delete Planner Item: { id }`, and `Get Planner Items` operations.
+- Plan for significant growth. The router should be as easily maintainable with 50
+  operations as with these 3.
+- Implement a simple, single-object ORM schema type and store data in a local
+  SQLite database. Data should persist across app restarts.
+- Config should not be hard-coded. It should be possible to easily override the config
+  in QA and Production environments. Document this process.
+- The server should provide a dev HTTP environment on http://localhost:9000. It
+  should be easy to override the port in the config.
+- Accessing this URL should serve a simple SPA.
+- The SPA should use the above API to allow the user to view/add/delete Planner Items.
+- Planner Items are like TODO list items except they have both a title and a date.
+- Items should be displayed in date order. HOWEVER, the first item in the list should
+  be “upcoming”, not “past”. (e.g. if it is currently 5/1, show items from 5/1 -> 4/30,
+  not 1/1 -> 12/31).
+- Items from “TODAYDAY/TODAYMONTH/TODAYYEAR” to “12/31/TODAYYEAR” should be colored
+  0x333. Items from 1/1 to “TODAYDAY/TODAYMONTH/NEXTYEAR” should be colored 0x999.
+  Be sure to allow for the case where “today” is January 1st.
+- It is acceptable to display dates in year/month/day format. If another format is
+  used, localized date formatting should be applied to display MM/DD or DD/MM per the
+  user’s browser preference.
+- Reloading the page should show the previously entered data, even if the server is
+  also restarted.
+- Include a simple build command in the tool of your choice. WebPack or Gulp preferred.
+- The build command should create `dist/*` assets including an `index.html`, an
+  application JS file, and a CSS file, suitable for uploading to S3 or another static
+  hosting source.
+- Include a simple test suite that tests at least one aspect of the project.
+
+It is not necessary to “boil the ocean” by including extensive styling, 100% code
+coverage in the test suite, Dockerfile setups with actual server components, etc.
+However, if you would like to include things like this, please feel free,
+particularly if you have a skill you would like to show off!
+
