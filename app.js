@@ -10,9 +10,6 @@ const path = require('path');
 const db = require('./db/_db');
 const routerAPI = require('./api');
 
-console.log('db in app.js ', db);
-console.log('routerAPI in app.js ', routerAPI);
-
 // App creation
 const app = express();
 const PORT = 9000;
@@ -51,7 +48,7 @@ app.use((err, req, res, next) => {
 app.listen(PORT, () => {
   console.log(`We're listening on port ${PORT}`);
   console.log('Connecting to the database...');
-  db.sync({ force: true })
+  db.sync({ force: false })
     .then(() => {
       console.log('Connected.');
     });
