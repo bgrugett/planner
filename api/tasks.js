@@ -31,8 +31,8 @@ routerTasks.delete('/:id', (req, res, next) => {
       id: +req.params.id
     }
   })
-  .then( res.sendStatus(200))
-  .catch(next);
+    .then(res.sendStatus(200))
+    .catch(next);
 });
 
 module.exports = routerTasks;

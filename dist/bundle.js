@@ -10540,7 +10540,8 @@ var Root = function (_React$Component) {
 
     var _this = _possibleConstructorReturn(this, (Root.__proto__ || Object.getPrototypeOf(Root)).call(this));
 
-    _this.state = { taskList: [],
+    _this.state = {
+      taskList: [],
       name: '',
       month: 1,
       day: 1
@@ -10576,8 +10577,10 @@ var Root = function (_React$Component) {
       if (!(0, _utility.dayValid)(this.state.month, this.state.day)) {
         console.error('day is invalid, months =', this.state.month, ' day =', this.state.day);
       }
-      this.addItem({ name: this.state.name, month: this.state.month, day: this.state.day,
-        year: (0, _utility.nyear)(this.state.month, this.state.day) });
+      this.addItem({
+        name: this.state.name, month: this.state.month, day: this.state.day,
+        year: (0, _utility.nyear)(this.state.month, this.state.day)
+      });
     }
   }, {
     key: 'onButtonClick',
