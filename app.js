@@ -12,7 +12,8 @@ const routerAPI = require('./api');
 
 // App creation
 const app = express();
-const PORT = 9000;
+console.log('process.env.PORT', process.env.PORT);
+const PORT = process.env.PORT || 9000;
 
 // Middleware
 
@@ -53,3 +54,5 @@ app.listen(PORT, () => {
       console.log('Connected.');
     });
 });
+
+module.exports = app;

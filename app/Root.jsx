@@ -36,7 +36,6 @@ class Root extends React.Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    console.log('in handle submit');
     if (!dayValid(this.state.month, this.state.day)) {
       console.error('day is invalid, months =', this.state.month, ' day =', this.state.day);
     }
@@ -45,14 +44,12 @@ class Root extends React.Component {
   }
 
   onButtonClick(id) {
-    console.log('id in onButtonClick ', id);
     axios.delete(`/api/tasks/${id}`)
       .then(this.fetchAllTasks())
       .catch(console.error);
   }
 
   addItem(taskData) {
-    console.log('in axios post');
     axios.post('/api/tasks', taskData)
       .then(this.fetchAllTasks())
       .catch(console.error);
@@ -62,7 +59,6 @@ class Root extends React.Component {
     axios.get('/api/tasks')
       .then(response => {
       this.setState({taskList: response.data});
-      console.log('received tasks ', response.data);
     })
       .catch(console.error);
   }

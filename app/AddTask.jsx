@@ -3,7 +3,6 @@ import React from 'react';
 class AddTask extends React.Component {
   constructor(props) {
     super(props);
-    console.log('props in AddTask ', this.props);
   }
 
   render() {

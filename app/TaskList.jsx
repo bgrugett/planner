@@ -6,7 +6,6 @@ import {yearClass, sortTask, monthLookUp} from '../utility';
 class TaskList extends React.Component {
   constructor(props) {
     super(props);
-    console.log('props in taskList ', this.props.list);
   }
 
 
