@@ -64,7 +64,6 @@ describe(' Backend tests ', () => {
                         .get('/api/tasks')
                         .expect(200)
                         .then(res => {
-                          console.log('res.body ', res.body);
                             expect(res.body).to.be.an('array');
                             expect(res.body.length).to.be.equal(2);
                         });
