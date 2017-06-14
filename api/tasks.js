@@ -25,13 +25,13 @@ routerTasks.get('/', (req, res, next) => {
     .catch(next);
 });
 
-routerTasks.delete('/delete/:id', (req, res, next) => {
+routerTasks.delete('/:id', (req, res, next) => {
   Task.destroy({
     where: {
       id: +req.params.id
     }
   })
-  .then( (deletedTask) => res.send(deletedTask))
+  .then( res.sendStatus(200))
   .catch(next);
 });
 

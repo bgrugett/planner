@@ -1,6 +1,13 @@
-.active {
-  color: blue;
+.thisYear {
+  padding: 10px 20px;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #333;
 }
-img {height: 200px; }
-button { color: red;}
-.pic {text-align: center;}
+
+.nextYear {
+  padding: 10px 20px;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #999;
+}

@@ -18,6 +18,7 @@ class Root extends React.Component {
     this.handleChangeMonth = this.handleChangeMonth.bind(this);
     this.handleChangeDay = this.handleChangeDay.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.onButtonClick = this.onButtonClick.bind(this);
   }
 
   handleChangeName(event) {
@@ -43,10 +44,17 @@ class Root extends React.Component {
        year: nyear(this.state.month, this.state.day) });
   }
 
+  onButtonClick(id) {
+    console.log('id in onButtonClick ', id);
+    axios.delete(`/api/tasks/${id}`)
+      .then(this.fetchAllTasks())
+      .catch(console.error);
+  }
+
   addItem(taskData) {
     console.log('in axios post');
     axios.post('/api/tasks', taskData)
-       .then(this.fetchAllTasks())
+      .then(this.fetchAllTasks())
       .catch(console.error);
   }
 
@@ -76,7 +84,10 @@ class Root extends React.Component {
         handleSubmit={this.handleSubmit}
       />
      <div>
-     <TaskList list={this.state.taskList} />
+       <TaskList
+         list={this.state.taskList}
+         onButtonClick={this.onButtonClick}
+       />
      </div>
         <footer>
             <div className="row">
